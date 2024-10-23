@@ -1,1 +1,1 @@
-# product_project
+# java_project
