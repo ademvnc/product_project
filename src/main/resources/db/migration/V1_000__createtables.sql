@@ -56,3 +56,5 @@ CREATE TABLE urun.Urun_Yorumlari (
     yorum TEXT,
     yorum_tarihi TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+

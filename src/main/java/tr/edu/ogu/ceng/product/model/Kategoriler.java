@@ -1,28 +1,43 @@
 package tr.edu.ogu.ceng.product.model;
 
-import lombok.*;
-import javax.persistence.*;
-import java.util.Set;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Kategoriler", schema = "urun")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name = "kategoriler", schema = "urun") // Tablo adını ve şemasını ayarlayın
 public class Kategoriler {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long kategoriId;
+    private String ad; // Kategori adı için bir alan
+    private Long ustKategoriId; // Kategori açıklaması için bir alan (isteğe bağlı)
 
-    @Column(nullable = false)
-    private String ad;
+    // Getter ve Setter metodları
+    public Long getkategoriId() {
+        return kategoriId;
+    }
 
-    @ManyToOne
-    @JoinColumn(name = "ust_kategori_id")
-    private Kategoriler ustKategori;
+    public void setkategoriId(Long kategoriId) {
+        this.kategoriId = kategoriId;
+    }
 
-    @OneToMany(mappedBy = "ustKategori")
-    private Set<Kategoriler> altKategoriler;
+    public String getName() {
+        return ad;
+    }
+
+    public void setName(String ad) {
+        this.ad = ad;
+    }
+
+    public Long getustKategoriId() {
+        return ustKategoriId;
+    }
+
+    public void setustKategoriId(Long ustKategoriId) {
+        this.ustKategoriId = ustKategoriId;
+    }
 }
-
