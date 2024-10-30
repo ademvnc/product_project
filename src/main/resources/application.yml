@@ -23,3 +23,9 @@ server:
       enabled: false
     path: /error # Hata sayfası yolunu değiştirir
   port: 8002
+
+microservices:
+  product: http://localhost:8004
+  category: http://localhost:8005
+  inventory: http://localhost:8006
+  config: http://localhost:8007

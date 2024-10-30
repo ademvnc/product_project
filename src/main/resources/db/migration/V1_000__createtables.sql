@@ -57,4 +57,10 @@ CREATE TABLE urun.Urun_Yorumlari (
     yorum_tarihi TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE urun.setting (
+    id SERIAL PRIMARY KEY,
+    key VARCHAR(255) UNIQUE NOT NULL,
+    value VARCHAR(255) NOT NULL
+);
+
 
