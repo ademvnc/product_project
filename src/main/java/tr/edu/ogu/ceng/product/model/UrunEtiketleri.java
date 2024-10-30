@@ -1,6 +1,7 @@
 package tr.edu.ogu.ceng.product.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -22,16 +23,13 @@ public class UrunEtiketleri {
     @Column(nullable = false)
     private String etiketAd;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name = "urun_etiket_iliski",
         joinColumns = @JoinColumn(name = "etiket_id"),
         inverseJoinColumns = @JoinColumn(name = "urun_id")
     )
     private Set<Urunler> urunler;
-    
-    /*@ManyToMany(mappedBy = "etiketler")
-    private Set<Urunler> urunler;*/
 
     // Getter and Setter methods
     public Long getEtiketId() {
