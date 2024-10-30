@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: product
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ilerijava
+    username: devuser
+    password: devpassword
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    repair: true
+    baseline-on-migrate: true
+
+server:
+  error:
+    whitelabel:
+      enabled: false
+    path: /error # Hata sayfası yolunu değiştirir
+  port: 8002
