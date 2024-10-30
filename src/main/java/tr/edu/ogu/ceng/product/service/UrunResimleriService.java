@@ -16,4 +16,9 @@ public class UrunResimleriService {
     public UrunResimleri getUrunResimleriById(Long id) {
         return urunResimleriRepository.findById(id).orElse(null);
     }
+    
+    // Yeni bir Kategoriler nesnesi eklemek için metot
+    public UrunResimleri createKategori(UrunResimleri urunresimleri) {
+        return urunResimleriRepository.save(urunresimleri); // Repository'deki save metodu ile nesneyi kaydet
+    }
 }
