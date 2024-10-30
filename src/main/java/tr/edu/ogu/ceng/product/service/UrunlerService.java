@@ -36,4 +36,9 @@ public class UrunlerService {
     public UrunlerRepository getUrunlerRepository() {
         return urunlerRepository;
     }
+    
+    // Yeni bir Kategoriler nesnesi eklemek için metot
+    public Urunler createKategori(Urunler urunler) {
+        return urunlerRepository.save(urunler); // Repository'deki save metodu ile nesneyi kaydet
+    }
 }
