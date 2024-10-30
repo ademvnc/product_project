@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Listesi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .product {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        .product-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-info h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .product-info p {
+            margin-top: 5px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Ürün Listesi</h1>
+
+        <!-- Ürün Listesi Bölümü - Spring Controller tarafından dinamik olarak doldurulacak -->
+        <div th:each="urun : ${urunler}" class="product">
+            <img th:src="${urun.resimUrl}" alt="Ürün Resmi">
+            <div class="product-info">
+                <h2 th:text="${urun.ad}"></h2>
+                <p th:text="${urun.aciklama}"></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
