@@ -19,3 +19,14 @@ INSERT INTO urun.urunler (ad, aciklama, fiyat, kategori_id, stok_miktari) VALUES
 
 INSERT INTO urun.urun_resimleri (urun_id, resim_url, ana_resim)
 VALUES (1, 'https://example.com/resim1.jpg', TRUE);
+
+INSERT INTO urun.stok (urun_id, miktar, depo_konumu) 
+VALUES (1, 50, 'Depo A');
+
+INSERT INTO urun.urun_yorumlari (urun_id, musteri_id, puan, yorum, yorum_tarihi)
+VALUES (1, 123, 5, 'Great product! Highly recommend.', CURRENT_TIMESTAMP);
+
+INSERT INTO urun.urun_etiketleri (etiket_ad) VALUES ('YourLabelName');
+
+
+

@@ -22,4 +22,9 @@ public class KategorilerService {
     public List<Kategoriler> getKategorilerByUstKategoriId(Long ustKategoriId) {
         return kategorilerRepository.findByUstKategoriId(ustKategoriId); // Üst kategori ID'sine göre kategorileri döndür
     }
+    
+ // Yeni bir Kategoriler nesnesi eklemek için metot
+    public Kategoriler createKategori(Kategoriler kategori) {
+        return kategorilerRepository.save(kategori); // Repository'deki save metodu ile nesneyi kaydet
+    }
 }
