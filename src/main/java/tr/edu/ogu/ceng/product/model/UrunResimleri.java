@@ -11,7 +11,7 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 @Table(name = "urun_resimleri", schema = "urun")
-public class UrunResimleri {
+public class UrunResimleri extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,0 +1,70 @@
+
+-- 1. Kategoriler tablosuna yeni alanlar ekleniyor
+ALTER TABLE urun.Kategoriler
+ADD COLUMN created_by VARCHAR(50),
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_by VARCHAR(50),
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN deleted_by VARCHAR(50),
+ADD COLUMN deleted_at TIMESTAMP,
+ADD COLUMN version BIGINT DEFAULT 1;
+
+-- 2. Urunler tablosuna yeni alanlar ekleniyor
+ALTER TABLE urun.Urunler
+ADD COLUMN created_by VARCHAR(50),
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_by VARCHAR(50),
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN deleted_by VARCHAR(50),
+ADD COLUMN deleted_at TIMESTAMP,
+ADD COLUMN version BIGINT DEFAULT 1;
+
+-- 3. Urun_Resimleri tablosuna yeni alanlar ekleniyor
+ALTER TABLE urun.Urun_Resimleri
+ADD COLUMN created_by VARCHAR(50),
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_by VARCHAR(50),
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN deleted_by VARCHAR(50),
+ADD COLUMN deleted_at TIMESTAMP,
+ADD COLUMN version BIGINT DEFAULT 1;
+
+-- 4. Urun_Etiketleri tablosuna yeni alanlar ekleniyor
+ALTER TABLE urun.Urun_Etiketleri
+ADD COLUMN created_by VARCHAR(50),
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_by VARCHAR(50),
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN deleted_by VARCHAR(50),
+ADD COLUMN deleted_at TIMESTAMP,
+ADD COLUMN version BIGINT DEFAULT 1;
+
+-- 5. Urun_Etiket_Iliski tablosuna yeni alanlar ekleniyor
+ALTER TABLE urun.Urun_Etiket_Iliski
+ADD COLUMN created_by VARCHAR(50),
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_by VARCHAR(50),
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN deleted_by VARCHAR(50),
+ADD COLUMN deleted_at TIMESTAMP,
+ADD COLUMN version BIGINT DEFAULT 1;
+
+-- 6. Stok tablosuna yeni alanlar ekleniyor
+ALTER TABLE urun.Stok
+ADD COLUMN created_by VARCHAR(50),
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_by VARCHAR(50),
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN deleted_by VARCHAR(50),
+ADD COLUMN deleted_at TIMESTAMP,
+ADD COLUMN version BIGINT DEFAULT 1;
+
+-- 7. Urun_Yorumlari tablosuna yeni alanlar ekleniyor
+ALTER TABLE urun.Urun_Yorumlari
+ADD COLUMN created_by VARCHAR(50),
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_by VARCHAR(50),
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN deleted_by VARCHAR(50),
+ADD COLUMN deleted_at TIMESTAMP,
+ADD COLUMN version BIGINT DEFAULT 1;
