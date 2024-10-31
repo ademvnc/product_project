@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Optional;
 
 @ExtendWith(MockitoExtension.class)
-public class Urunler_woDockerTest {
+public class UrunlerWoDockerTest {
 
     @Mock
     private UrunlerRepository urunlerRepository;
