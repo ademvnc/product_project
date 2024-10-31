@@ -1,6 +1,7 @@
 package tr.edu.ogu.ceng.product;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -29,7 +30,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Testcontainers
 public class UrunlerTest {
 	
@@ -168,7 +169,11 @@ public class UrunlerTest {
         });
     }
 
-    // Diğer test senaryolarını ekleyebilirsiniz
+    @AfterAll
+    static void tearDown() {
+    	postgreSQLContainer.stop();  // PostgreSQL konteynerini durdur
+        redisContainer.stop();      // Redis konteynerini durdur
+    }
 }
 
 
