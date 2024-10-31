@@ -15,7 +15,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "urunler", schema = "urun")
-public class Urunler {
+public class Urunler extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,8 +44,19 @@ public class Urunler {
 
     @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime guncellenmeTarihi;
+    
+    public Urunler() {
+        // Varsayılan constructor
+    }
+    
+    public Urunler(long id, String ad, double fiyat) {
+        this.urunId = id;
+        this.ad = ad;
+        this.fiyat = BigDecimal.valueOf(fiyat);
+    }
 
-    // Getter ve Setter metodları
+
+	// Getter ve Setter metodları
     public Long getUrunId() {
         return urunId;
     }
@@ -75,6 +86,9 @@ public class Urunler {
     }
 
     public void setFiyat(BigDecimal fiyat) {
+    	if (fiyat.compareTo(BigDecimal.ZERO) < 0) {
+            throw new IllegalArgumentException("Fiyat negatif olamaz.");
+        }
         this.fiyat = fiyat;
     }
 

@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "kategoriler", schema = "urun") // Tablo adını ve şemasını ayarlayın
-public class Kategoriler {
+public class Kategoriler extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

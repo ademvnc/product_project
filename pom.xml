@@ -90,6 +90,48 @@
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
+		
+		
+		<!-- Testcontainers for PostgreSQL -->
+	    <dependency>
+	        <groupId>org.testcontainers</groupId>
+	        <artifactId>postgresql</artifactId>
+	        <version>1.17.3</version>
+	        <scope>test</scope>
+	    </dependency>
+	    <!-- Testcontainers for Redis -->
+	    <dependency>
+	        <groupId>org.testcontainers</groupId>
+	        <artifactId>junit-jupiter</artifactId>
+	        <version>1.17.3</version>
+	        <scope>test</scope>
+	    </dependency>
+	    
+	    <!-- Hangi JDBC kütüphanesini kullanıyorsanız onu da ekleyin -->
+    	<dependency>
+        	<groupId>org.postgresql</groupId>
+        	<artifactId>postgresql</artifactId>
+        	<version>42.3.1</version>
+    	</dependency>
+
+	    
+		
+	    	
+	    <dependency>
+	    	<groupId>org.springframework.boot</groupId>
+	    	<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		
+		<dependency>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-test</artifactId>
+    		<scope>test</scope>
+		</dependency>
+		
+	
+		
+		
+		
 
 
 
@@ -101,6 +143,9 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
+			
+        
 		</plugins>
 	</build>
 	<repositories>
@@ -122,6 +167,6 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</pluginRepository>
-	</pluginRepositories>
+	</pluginRepositories> 
 
 </project>

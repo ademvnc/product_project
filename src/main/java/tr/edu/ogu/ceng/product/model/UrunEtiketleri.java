@@ -14,7 +14,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "urun_etiketleri", schema = "urun")
-public class UrunEtiketleri {
+public class UrunEtiketleri extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
