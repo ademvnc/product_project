@@ -1,4 +1,4 @@
-CREATE SCHEMA IF NOT EXISTS urun AUTHORIZATION postgres;
+CREATE SCHEMA IF NOT EXISTS urun AUTHORIZATION devuser;
 
 -- 1. Kategoriler tablosunu oluştur
 CREATE TABLE urun.Kategoriler (

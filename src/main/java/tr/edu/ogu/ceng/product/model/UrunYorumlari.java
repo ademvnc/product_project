@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "urun_yorumlari", schema = "urun")
-public class UrunYorumlari {
+public class UrunYorumlari extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
