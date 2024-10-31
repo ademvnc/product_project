@@ -47,4 +47,6 @@ public class StokService {
     public void deleteStok(Long id) {
         stokRepository.deleteById(id);
     }
+
+	
 }
