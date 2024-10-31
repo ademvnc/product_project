@@ -3,12 +3,14 @@ package tr.edu.ogu.ceng.product;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import tr.edu.ogu.ceng.product.model.Urunler;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class Urunler2Test {
 
     private Urunler urun;
